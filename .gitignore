@@ -1,0 +1,19 @@
+﻿# Secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Dependencies / builds
+node_modules/
+venv/
+.venv/
+__pycache__/
+*.pyc
+dist/
+build/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini

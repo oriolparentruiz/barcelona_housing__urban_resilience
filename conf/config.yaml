@@ -1,0 +1,23 @@
+project:
+  name: "bcn_housing_analysis"
+  timezone: "Europe/Madrid"
+
+paths:
+  # All paths will be relative to the project root
+  raw_sources: "raw_sources"
+  landing_zone: "data/landing"
+  formatted_zone: "data/formatted"
+  exploitation_zone: "data/exploitation"
+  mlflow_tracking_uri: "sqlite:///mlflow.db" 
+
+mongodb:
+  uri: "mongodb://localhost:27017" # Default local, can be overridden via env var
+  database: "formatted_zone"
+
+spark:
+  app_name: "BCN_Data_Engine"
+  master: "local[*]"
+  packages:
+    - "org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0"
+    - "org.mongodb.spark:mongo-spark-connector_2.12:10.4.1"
+    - "io.delta:delta-spark_2.12:3.2.0"
